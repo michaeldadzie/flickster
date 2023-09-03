@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1439BD1F2AA4C2CF008CFF25 /* flicksterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD1E2AA4C2CF008CFF25 /* flicksterApp.swift */; };
+		1439BD1F2AA4C2CF008CFF25 /* FlicksterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD1E2AA4C2CF008CFF25 /* FlicksterApp.swift */; };
 		1439BD212AA4C2CF008CFF25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD202AA4C2CF008CFF25 /* ContentView.swift */; };
 		1439BD232AA4C2D1008CFF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1439BD222AA4C2D1008CFF25 /* Assets.xcassets */; };
 		1439BD262AA4C2D1008CFF25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1439BD252AA4C2D1008CFF25 /* Preview Assets.xcassets */; };
@@ -15,7 +15,7 @@
 
 /* Begin PBXFileReference section */
 		1439BD1B2AA4C2CF008CFF25 /* flickster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flickster.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1439BD1E2AA4C2CF008CFF25 /* flicksterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flicksterApp.swift; sourceTree = "<group>"; };
+		1439BD1E2AA4C2CF008CFF25 /* FlicksterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlicksterApp.swift; sourceTree = "<group>"; };
 		1439BD202AA4C2CF008CFF25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1439BD222AA4C2D1008CFF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1439BD252AA4C2D1008CFF25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		1439BD1D2AA4C2CF008CFF25 /* flickster */ = {
 			isa = PBXGroup;
 			children = (
-				1439BD1E2AA4C2CF008CFF25 /* flicksterApp.swift */,
+				1439BD1E2AA4C2CF008CFF25 /* FlicksterApp.swift */,
 				1439BD202AA4C2CF008CFF25 /* ContentView.swift */,
 				1439BD222AA4C2D1008CFF25 /* Assets.xcassets */,
 				1439BD242AA4C2D1008CFF25 /* Preview Content */,
@@ -138,7 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1439BD212AA4C2CF008CFF25 /* ContentView.swift in Sources */,
-				1439BD1F2AA4C2CF008CFF25 /* flicksterApp.swift in Sources */,
+				1439BD1F2AA4C2CF008CFF25 /* FlicksterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

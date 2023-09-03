@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  flickster
-//
-//  Created by Michael Dadzie on 9/3/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {
