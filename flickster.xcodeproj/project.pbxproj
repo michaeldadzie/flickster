@@ -11,6 +11,14 @@
 		1439BD212AA4C2CF008CFF25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD202AA4C2CF008CFF25 /* ContentView.swift */; };
 		1439BD232AA4C2D1008CFF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1439BD222AA4C2D1008CFF25 /* Assets.xcassets */; };
 		1439BD262AA4C2D1008CFF25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1439BD252AA4C2D1008CFF25 /* Preview Assets.xcassets */; };
+		1439BD2E2AA4C914008CFF25 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD2D2AA4C914008CFF25 /* PostModel.swift */; };
+		1439BD312AA4CA9F008CFF25 /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD302AA4CA9F008CFF25 /* APIBuilder.swift */; };
+		1439BD332AA4CB3C008CFF25 /* ResultStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD322AA4CB3C008CFF25 /* ResultStates.swift */; };
+		1439BD352AA4CB6C008CFF25 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD342AA4CB6C008CFF25 /* APIError.swift */; };
+		1439BD372AA4CBC6008CFF25 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD362AA4CBC6008CFF25 /* FeedService.swift */; };
+		1439BD3A2AA4CE5A008CFF25 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD392AA4CE5A008CFF25 /* FeedView.swift */; };
+		1439BD3D2AA4CEA3008CFF25 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD3C2AA4CEA3008CFF25 /* FeedViewModel.swift */; };
+		1439BD3F2AA4D389008CFF25 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD3E2AA4D389008CFF25 /* VideoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,14 @@
 		1439BD202AA4C2CF008CFF25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1439BD222AA4C2D1008CFF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1439BD252AA4C2D1008CFF25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1439BD2D2AA4C914008CFF25 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		1439BD302AA4CA9F008CFF25 /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
+		1439BD322AA4CB3C008CFF25 /* ResultStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultStates.swift; sourceTree = "<group>"; };
+		1439BD342AA4CB6C008CFF25 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		1439BD362AA4CBC6008CFF25 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		1439BD392AA4CE5A008CFF25 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		1439BD3C2AA4CEA3008CFF25 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		1439BD3E2AA4D389008CFF25 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +67,11 @@
 		1439BD1D2AA4C2CF008CFF25 /* flickster */ = {
 			isa = PBXGroup;
 			children = (
+				1439BD3B2AA4CE91008CFF25 /* ViewModel */,
+				1439BD382AA4CE41008CFF25 /* Views */,
+				1439BD2F2AA4CA90008CFF25 /* Actions */,
+				1439BD2C2AA4C6C1008CFF25 /* Model */,
 				1439BD1E2AA4C2CF008CFF25 /* FlicksterApp.swift */,
-				1439BD202AA4C2CF008CFF25 /* ContentView.swift */,
 				1439BD222AA4C2D1008CFF25 /* Assets.xcassets */,
 				1439BD242AA4C2D1008CFF25 /* Preview Content */,
 			);
@@ -65,6 +84,43 @@
 				1439BD252AA4C2D1008CFF25 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1439BD2C2AA4C6C1008CFF25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1439BD2D2AA4C914008CFF25 /* PostModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1439BD2F2AA4CA90008CFF25 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				1439BD302AA4CA9F008CFF25 /* APIBuilder.swift */,
+				1439BD322AA4CB3C008CFF25 /* ResultStates.swift */,
+				1439BD342AA4CB6C008CFF25 /* APIError.swift */,
+				1439BD362AA4CBC6008CFF25 /* FeedService.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		1439BD382AA4CE41008CFF25 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1439BD202AA4C2CF008CFF25 /* ContentView.swift */,
+				1439BD392AA4CE5A008CFF25 /* FeedView.swift */,
+				1439BD3E2AA4D389008CFF25 /* VideoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1439BD3B2AA4CE91008CFF25 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1439BD3C2AA4CEA3008CFF25 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1439BD3A2AA4CE5A008CFF25 /* FeedView.swift in Sources */,
+				1439BD312AA4CA9F008CFF25 /* APIBuilder.swift in Sources */,
 				1439BD212AA4C2CF008CFF25 /* ContentView.swift in Sources */,
+				1439BD372AA4CBC6008CFF25 /* FeedService.swift in Sources */,
+				1439BD2E2AA4C914008CFF25 /* PostModel.swift in Sources */,
+				1439BD332AA4CB3C008CFF25 /* ResultStates.swift in Sources */,
+				1439BD3F2AA4D389008CFF25 /* VideoView.swift in Sources */,
 				1439BD1F2AA4C2CF008CFF25 /* FlicksterApp.swift in Sources */,
+				1439BD352AA4CB6C008CFF25 /* APIError.swift in Sources */,
+				1439BD3D2AA4CEA3008CFF25 /* FeedViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
