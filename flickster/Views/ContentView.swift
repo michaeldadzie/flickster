@@ -1,14 +1,32 @@
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
+    
+    init() {
+        UITabBar.appearance().barTintColor = .black
+        UITabBar.appearance().unselectedItemTintColor = .white
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            FeedView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Feed")
+                }
+            SubverseView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Subverse")
+                }
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Profile")
+                }
         }
-        .padding()
+        .accentColor(.red)
     }
 }
 
