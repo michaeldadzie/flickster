@@ -14,6 +14,8 @@ struct FeedServiceImpl: FeedService {
             .receive(on: DispatchQueue.main)
             .mapError {_ in APIError.unknown }
             .flatMap { data, response -> AnyPublisher<PostModel, APIError> in
+//                print(endpoint.urlRequest)
+//                print(String(data: data, encoding: .utf8)!)
                 guard let response = response as? HTTPURLResponse else {
                     return Fail(error: APIError.unknown).eraseToAnyPublisher()
                 }
