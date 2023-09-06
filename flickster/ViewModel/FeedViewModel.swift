@@ -13,6 +13,7 @@ class FeedViewModelImpl: ObservableObject, FeedViewModel {
     private var cancellables = Set<AnyCancellable>()
     
     @Published private(set) var state: ResultState = .loading
+    @Published var videoPlayerViewModel = VideoPlayerViewModel()
     
     init(service: FeedService) {
         self.service = service
@@ -34,6 +35,22 @@ class FeedViewModelImpl: ObservableObject, FeedViewModel {
             }
         
         self.cancellables.insert(cancellable)
+    }
+    
+    func playVideo(post: Post) {
+        guard let url = URL(string: post.videoLink) else {
+            return
+        }
+        
+        videoPlayerViewModel.playVideo(withURL: url)
+    }
+    
+    func pauseVideo() {
+        videoPlayerViewModel.pauseVideo()
+    }
+    
+    func stopVideo() {
+        videoPlayerViewModel.stopVideo()
     }
     
 }

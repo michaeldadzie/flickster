@@ -3,13 +3,14 @@ import SwiftUI
 struct FeedView: View {
     
     @StateObject var viewModel = FeedViewModelImpl(service: FeedServiceImpl())
+    @StateObject var videoviewModel = VideoPlayerViewModel()
     
     var body: some View {
         NavigationView {
             Group {
                 switch viewModel.state {
-//                case .loading:
-//                    ProgressView()
+                case .loading:
+                    ProgressView()
 //                case .failed(error: let error):
 //                    Text(error.localizedDescription)
 //                case .success(content: viewModel.posts):
@@ -17,13 +18,14 @@ struct FeedView: View {
 //                        VideoView(post: item)
 //                    }
                 default:
-                    List(viewModel.posts) { item in
-                        VideoView(post: item)
+                    ZStack {
+                        PlayerScrollView(videoPlayerViewModel: videoviewModel, post: viewModel.posts)
                     }
                 }
             }
+            .ignoresSafeArea(.all)
+            .onAppear(perform: viewModel.getPosts)
         }
-        .onAppear(perform: viewModel.getPosts)
     }
 }
 
