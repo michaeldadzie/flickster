@@ -1,4 +1,5 @@
 import Foundation
+import AVKit
 
 struct PostModel: Codable {
     let page, recordsPerPage, maxPageSize, pageSize: Int
@@ -59,32 +60,60 @@ struct Category: Codable {
 }
 
 extension Post {
-    static var dummyData: Post {
-        .init(
-            id: 1097,
-            category: Category(
-                id: 108,
-                name: "Holy Vible",
-                count: 27,
-                description: "The best vibes!",
-                imageURL: "https://cdn-assets.socialverseapp.com/categories/4d66f8010a443cd981da1fb57d6db086"
-            ),
-            slug: "matthew-13-12",
-            title: "Matthew 13:12",
-            identifier: "cP-WIDC",
-            commentCount: 0,
-            upvoteCount: 0,
-            shareCount: 0,
-            videoLink: "https://vs.socialverseapp.com/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992_flic.mp4",
-            isLocked: false,
-            createdAt: 1693429738000,
-            firstName: "Michael",
-            lastName: "Dadzie",
-            username: "afrobeezy",
-            upvoted: false,
-            bookmarked: false,
-            thumbnailURL: "https://vs.socialverseapp.com/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992.0000005.jpg",
-            following: false,
-            pictureURL: "https://cdn-assets.socialverseapp.com/profile/flic-avatar-f921f0e59f17af0389138ffec362a0d5.png")
+    static var dummyData: [Post] {
+        [
+            .init(
+                id: 1097,
+                category: Category(
+                    id: 108,
+                    name: "Holy Vible",
+                    count: 27,
+                    description: "The best vibes!",
+                    imageURL: "https://cdn-assets.socialverseapp.com/categories/4d66f8010a443cd981da1fb57d6db086"
+                ),
+                slug: "matthew-13-12",
+                title: "Matthew 13:12",
+                identifier: "cP-WIDC",
+                commentCount: 0,
+                upvoteCount: 0,
+                shareCount: 0,
+                videoLink: "https://vs.socialverseapp.com/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992_flic.mp4",
+                isLocked: false,
+                createdAt: 1693429738000,
+                firstName: "Michael",
+                lastName: "Dadzie",
+                username: "afrobeezy",
+                upvoted: false,
+                bookmarked: false,
+                thumbnailURL: "https://vs.socialverseapp.com/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992.0000005.jpg",
+                following: false,
+                pictureURL: "https://cdn-assets.socialverseapp.com/profile/flic-avatar-f921f0e59f17af0389138ffec362a0d5.png"),
+            .init(
+                id: 1097,
+                category: Category(
+                    id: 108,
+                    name: "Holy Vible",
+                    count: 27,
+                    description: "The best vibes!",
+                    imageURL: "https://cdn-assets.socialverseapp.com/categories/4d66f8010a443cd981da1fb57d6db086"
+                ),
+                slug: "matthew-13-12",
+                title: "Matthew 13:12",
+                identifier: "cP-WIDC",
+                commentCount: 0,
+                upvoteCount: 0,
+                shareCount: 0,
+                videoLink: "https://vs.socialverseapp.com/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992_flic.mp4",
+                isLocked: false,
+                createdAt: 1693429738000,
+                firstName: "Michael",
+                lastName: "Dadzie",
+                username: "afrobeezy",
+                upvoted: false,
+                bookmarked: false,
+                thumbnailURL: "https://vs.socialverseapp.com/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992/afrobeezy_f77b2cef372a91f3911f0938c7262c9d6de1add3992.0000005.jpg",
+                following: false,
+                pictureURL: "https://cdn-assets.socialverseapp.com/profile/flic-avatar-f921f0e59f17af0389138ffec362a0d5.png")
+        ]
     }
 }
