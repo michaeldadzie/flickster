@@ -11,19 +11,21 @@
 		1439BD212AA4C2CF008CFF25 /* FlicksterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD202AA4C2CF008CFF25 /* FlicksterTabView.swift */; };
 		1439BD232AA4C2D1008CFF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1439BD222AA4C2D1008CFF25 /* Assets.xcassets */; };
 		1439BD262AA4C2D1008CFF25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1439BD252AA4C2D1008CFF25 /* Preview Assets.xcassets */; };
-		1439BD2E2AA4C914008CFF25 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD2D2AA4C914008CFF25 /* PostModel.swift */; };
+		1439BD2E2AA4C914008CFF25 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD2D2AA4C914008CFF25 /* Post.swift */; };
 		1439BD312AA4CA9F008CFF25 /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD302AA4CA9F008CFF25 /* APIBuilder.swift */; };
 		1439BD332AA4CB3C008CFF25 /* ResultStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD322AA4CB3C008CFF25 /* ResultStates.swift */; };
 		1439BD352AA4CB6C008CFF25 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD342AA4CB6C008CFF25 /* APIError.swift */; };
 		1439BD372AA4CBC6008CFF25 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD362AA4CBC6008CFF25 /* FeedService.swift */; };
 		1439BD3A2AA4CE5A008CFF25 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD392AA4CE5A008CFF25 /* FeedView.swift */; };
 		1439BD3D2AA4CEA3008CFF25 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD3C2AA4CEA3008CFF25 /* FeedViewModel.swift */; };
-		1444FA702AA89E4B0027A314 /* PlayerScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA6F2AA89E4B0027A314 /* PlayerScrollView.swift */; };
-		1444FA722AA8A18C0027A314 /* VideoPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA712AA8A18C0027A314 /* VideoPlayerViewModel.swift */; };
-		1444FA742AA8A39C0027A314 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA732AA8A39C0027A314 /* PlayerView.swift */; };
+		1444FA722AA8A18C0027A314 /* FlicksterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA712AA8A18C0027A314 /* FlicksterManager.swift */; };
 		1444FA762AA8B1060027A314 /* SubverseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA752AA8B1060027A314 /* SubverseView.swift */; };
 		1444FA782AA8B1120027A314 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA772AA8B1120027A314 /* ProfileView.swift */; };
 		14A22FF32B20827B00104F26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A22FF22B20827B00104F26 /* ContentView.swift */; };
+		14A22FF52B20875A00104F26 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A22FF42B20875A00104F26 /* Category.swift */; };
+		14A22FF72B20961B00104F26 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A22FF62B20961B00104F26 /* FeedCell.swift */; };
+		14A22FF92B2096E600104F26 /* ActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A22FF82B2096E600104F26 /* ActionItem.swift */; };
+		14A22FFB2B20971200104F26 /* FlicksterPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A22FFA2B20971200104F26 /* FlicksterPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,19 +34,21 @@
 		1439BD202AA4C2CF008CFF25 /* FlicksterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlicksterTabView.swift; sourceTree = "<group>"; };
 		1439BD222AA4C2D1008CFF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1439BD252AA4C2D1008CFF25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1439BD2D2AA4C914008CFF25 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		1439BD2D2AA4C914008CFF25 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		1439BD302AA4CA9F008CFF25 /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
 		1439BD322AA4CB3C008CFF25 /* ResultStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultStates.swift; sourceTree = "<group>"; };
 		1439BD342AA4CB6C008CFF25 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		1439BD362AA4CBC6008CFF25 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		1439BD392AA4CE5A008CFF25 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		1439BD3C2AA4CEA3008CFF25 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
-		1444FA6F2AA89E4B0027A314 /* PlayerScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScrollView.swift; sourceTree = "<group>"; };
-		1444FA712AA8A18C0027A314 /* VideoPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewModel.swift; sourceTree = "<group>"; };
-		1444FA732AA8A39C0027A314 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		1444FA712AA8A18C0027A314 /* FlicksterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlicksterManager.swift; sourceTree = "<group>"; };
 		1444FA752AA8B1060027A314 /* SubverseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubverseView.swift; sourceTree = "<group>"; };
 		1444FA772AA8B1120027A314 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		14A22FF22B20827B00104F26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		14A22FF42B20875A00104F26 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		14A22FF62B20961B00104F26 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		14A22FF82B2096E600104F26 /* ActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItem.swift; sourceTree = "<group>"; };
+		14A22FFA2B20971200104F26 /* FlicksterPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlicksterPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +142,7 @@
 		14A22FE72B207F6500104F26 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1444FA6F2AA89E4B0027A314 /* PlayerScrollView.swift */,
 				1439BD392AA4CE5A008CFF25 /* FeedView.swift */,
-				1444FA732AA8A39C0027A314 /* PlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,6 +150,9 @@
 		14A22FE82B207F6C00104F26 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				14A22FF62B20961B00104F26 /* FeedCell.swift */,
+				14A22FF82B2096E600104F26 /* ActionItem.swift */,
+				14A22FFA2B20971200104F26 /* FlicksterPlayer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -155,7 +160,7 @@
 		14A22FE92B207F9100104F26 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1444FA712AA8A18C0027A314 /* VideoPlayerViewModel.swift */,
+				1444FA712AA8A18C0027A314 /* FlicksterManager.swift */,
 				1439BD3C2AA4CEA3008CFF25 /* FeedViewModel.swift */,
 			);
 			path = ViewModel;
@@ -164,7 +169,8 @@
 		14A22FEA2B207FD300104F26 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1439BD2D2AA4C914008CFF25 /* PostModel.swift */,
+				14A22FF42B20875A00104F26 /* Category.swift */,
+				1439BD2D2AA4C914008CFF25 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,16 +304,18 @@
 			files = (
 				1439BD3A2AA4CE5A008CFF25 /* FeedView.swift in Sources */,
 				1439BD312AA4CA9F008CFF25 /* APIBuilder.swift in Sources */,
+				14A22FF72B20961B00104F26 /* FeedCell.swift in Sources */,
 				1444FA762AA8B1060027A314 /* SubverseView.swift in Sources */,
 				1439BD212AA4C2CF008CFF25 /* FlicksterTabView.swift in Sources */,
 				1439BD372AA4CBC6008CFF25 /* FeedService.swift in Sources */,
-				1439BD2E2AA4C914008CFF25 /* PostModel.swift in Sources */,
-				1444FA702AA89E4B0027A314 /* PlayerScrollView.swift in Sources */,
+				1439BD2E2AA4C914008CFF25 /* Post.swift in Sources */,
+				14A22FFB2B20971200104F26 /* FlicksterPlayer.swift in Sources */,
+				14A22FF52B20875A00104F26 /* Category.swift in Sources */,
 				1439BD332AA4CB3C008CFF25 /* ResultStates.swift in Sources */,
-				1444FA742AA8A39C0027A314 /* PlayerView.swift in Sources */,
 				1439BD1F2AA4C2CF008CFF25 /* FlicksterApp.swift in Sources */,
-				1444FA722AA8A18C0027A314 /* VideoPlayerViewModel.swift in Sources */,
+				1444FA722AA8A18C0027A314 /* FlicksterManager.swift in Sources */,
 				14A22FF32B20827B00104F26 /* ContentView.swift in Sources */,
+				14A22FF92B2096E600104F26 /* ActionItem.swift in Sources */,
 				1439BD352AA4CB6C008CFF25 /* APIError.swift in Sources */,
 				1444FA782AA8B1120027A314 /* ProfileView.swift in Sources */,
 				1439BD3D2AA4CEA3008CFF25 /* FeedViewModel.swift in Sources */,
