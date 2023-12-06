@@ -25,7 +25,11 @@ extension FeedAPI: APIBuilder {
     }
     
     var urlRequest: URLRequest {
-        return URLRequest(url: self.baseUrl.appendingPathComponent(self.path))
+        let combinedURLString = self.baseUrl.absoluteString + self.path
+        if let combinedURL = URL(string: combinedURLString) {
+            return URLRequest(url: combinedURL)
+        } else {
+            fatalError("Invalid URL")
+        }
     }
-    
 }
