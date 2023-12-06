@@ -8,9 +8,9 @@ protocol FeedViewModel {
 
 class FeedViewModelImpl: ObservableObject, FeedViewModel {
     
-    private let service: FeedService
+    @Published var posts = [Post]()
     
-    private(set) var posts = [Post]()
+    private let service: FeedService
     private var cancellables = Set<AnyCancellable>()
     
     var isLoading: Bool {
@@ -18,7 +18,6 @@ class FeedViewModelImpl: ObservableObject, FeedViewModel {
     }
     
     @Published private(set) var state: ResultState = .loading
-    @Published var videoPlayerViewModel = VideoPlayerViewModel()
     
     
     init(service: FeedService) {
@@ -26,6 +25,8 @@ class FeedViewModelImpl: ObservableObject, FeedViewModel {
     }
     
     func getPosts() {
+        
+        print("DEBUG: fetching posts")
         
         self.state = .loading
         
@@ -40,25 +41,12 @@ class FeedViewModelImpl: ObservableObject, FeedViewModel {
                 }
             } receiveValue: { response in
                 self.posts = response.posts
+                // print(self.posts)
+                // print(response.posts)
+                // print(response.page)
             }
         
         self.cancellables.insert(cancellable)
-    }
-    
-    func playVideo(post: Post) {
-        guard let url = URL(string: post.videoLink) else {
-            return
-        }
-        
-        videoPlayerViewModel.playVideo(withURL: url)
-    }
-    
-    func pauseVideo() {
-        videoPlayerViewModel.pauseVideo()
-    }
-    
-    func stopVideo() {
-        videoPlayerViewModel.stopVideo()
     }
     
 }

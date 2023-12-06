@@ -2,20 +2,20 @@ import Combine
 import Foundation
 
 protocol FeedService {
-    func request(from endpoint: FeedAPI) -> AnyPublisher<PostModel, APIError>
+    func request(from endpoint: FeedAPI) -> AnyPublisher<PostData, APIError>
 }
 
 struct FeedServiceImpl: FeedService {
-    func request(from endpoint: FeedAPI) -> AnyPublisher<PostModel, APIError> {
+    func request(from endpoint: FeedAPI) -> AnyPublisher<PostData, APIError> {
         
         return URLSession
             .shared
             .dataTaskPublisher(for: endpoint.urlRequest)
             .receive(on: DispatchQueue.main)
             .mapError {_ in APIError.unknown }
-            .flatMap { data, response -> AnyPublisher<PostModel, APIError> in
-//                print(endpoint.urlRequest)
-//                print(String(data: data, encoding: .utf8)!)
+            .flatMap { data, response -> AnyPublisher<PostData, APIError> in
+                // print(endpoint.urlRequest)
+                // print(String(data: data, encoding: .utf8)!)
                 guard let response = response as? HTTPURLResponse else {
                     return Fail(error: APIError.unknown).eraseToAnyPublisher()
                 }
@@ -24,7 +24,7 @@ struct FeedServiceImpl: FeedService {
                     let jsonDecoder = JSONDecoder()
                     jsonDecoder.dataDecodingStrategy = .base64
                     return Just(data)
-                        .decode(type: PostModel.self, decoder: jsonDecoder)
+                        .decode(type: PostData.self, decoder: jsonDecoder)
                         .mapError { error in
                             print("Decoding error: \(error)")
                             return APIError.decodingError }
