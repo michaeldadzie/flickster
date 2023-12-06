@@ -3,6 +3,7 @@ import Foundation
 
 protocol FeedViewModel {
     func getPosts()
+    var isLoading: Bool { get }
 }
 
 class FeedViewModelImpl: ObservableObject, FeedViewModel {
@@ -12,14 +13,21 @@ class FeedViewModelImpl: ObservableObject, FeedViewModel {
     private(set) var posts = [Post]()
     private var cancellables = Set<AnyCancellable>()
     
+    var isLoading: Bool {
+        state == .loading
+    }
+    
     @Published private(set) var state: ResultState = .loading
     @Published var videoPlayerViewModel = VideoPlayerViewModel()
+    
     
     init(service: FeedService) {
         self.service = service
     }
     
     func getPosts() {
+        
+        self.state = .loading
         
         let cancellable = service
             .request(from: .getPosts)
