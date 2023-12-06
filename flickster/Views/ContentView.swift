@@ -4,8 +4,8 @@ import UIKit
 struct ContentView: View {
     
     init() {
-        UITabBar.appearance().barTintColor = .black
-        UITabBar.appearance().unselectedItemTintColor = .white
+        UITabBar.appearance().unselectedItemTintColor = .gray
+//        UITabBar.appearance().barTintColor = .black
     }
     
     var body: some View {
@@ -19,6 +19,9 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Subverse")
+                }
+                .onTapGesture {
+                    
                 }
             ProfileView()
                 .tabItem {

@@ -7,15 +7,15 @@ struct PlayerView: View {
     let post: [Post]
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack {
             ForEach(0..<post.count, id: \.self) { i in
                 ZStack {
                     VideoPlayer(player: self.videoPlayerViewModel.currentPlayer)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                    //                        .offset(y: -5)
                 }
             }
         }
+        .background(.black)
         .onAppear {
             if !self.post.isEmpty {
                 self.videoPlayerViewModel.playVideo(withURL: URL(string: self.post[0].videoLink)!)
