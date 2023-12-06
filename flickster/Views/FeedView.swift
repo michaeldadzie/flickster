@@ -2,29 +2,33 @@ import SwiftUI
 
 struct FeedView: View {
     
-    @StateObject var viewModel = FeedViewModelImpl(service: FeedServiceImpl())
-    @StateObject var videoviewModel = VideoPlayerViewModel()
+    @StateObject var feedView = FeedViewModelImpl(service: FeedServiceImpl())
+    @StateObject var videoView = VideoPlayerViewModel()
     
     var body: some View {
         NavigationView {
             Group {
-                switch viewModel.state {
+                switch feedView.state {
                 case .loading:
-                    ProgressView()
-//                case .failed(error: let error):
-//                    Text(error.localizedDescription)
-//                case .success(content: viewModel.posts):
-//                    List(viewModel.posts) { item in
-//                        VideoView(post: item)
-//                    }
+                    ZStack { }
+                case .failed(error: let error):
+                    Text(error.localizedDescription)
                 default:
                     ZStack {
-                        PlayerScrollView(videoPlayerViewModel: videoviewModel, post: viewModel.posts)
+                        PlayerScrollView(videoPlayerViewModel: videoView, post: feedView.posts)
                     }
                 }
             }
+            .onTapGesture {
+                if (videoView.isPlaying) {
+                    videoView.pauseVideo()
+                } else {
+                    videoView.currentPlayer?.play()
+                }
+            }
             .ignoresSafeArea(.all)
-            .onAppear(perform: viewModel.getPosts)
+            .background(.black)
+            .onAppear(perform: feedView.getPosts)
         }
     }
 }
