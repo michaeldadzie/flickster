@@ -1,11 +1,11 @@
 import SwiftUI
 import UIKit
 
-struct ContentView: View {
+struct FlicksterTabView: View {
     
     init() {
         UITabBar.appearance().unselectedItemTintColor = .gray
-//        UITabBar.appearance().barTintColor = .black
+        // UITabBar.appearance().barTintColor = .black
     }
     
     var body: some View {
@@ -15,6 +15,7 @@ struct ContentView: View {
                     Image(systemName: "house")
                     Text("Feed")
                 }
+            
             SubverseView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
@@ -23,6 +24,7 @@ struct ContentView: View {
                 .onTapGesture {
                     
                 }
+            
             ProfileView()
                 .tabItem {
                     Image(systemName: "person")
@@ -33,8 +35,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    FlicksterTabView()
 }

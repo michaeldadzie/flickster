@@ -4,7 +4,7 @@ import SwiftUI
 struct FlicksterApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FlicksterTabView()
         }
     }
 }

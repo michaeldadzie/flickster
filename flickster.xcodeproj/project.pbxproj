@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1439BD1F2AA4C2CF008CFF25 /* FlicksterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD1E2AA4C2CF008CFF25 /* FlicksterApp.swift */; };
-		1439BD212AA4C2CF008CFF25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD202AA4C2CF008CFF25 /* ContentView.swift */; };
+		1439BD212AA4C2CF008CFF25 /* FlicksterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD202AA4C2CF008CFF25 /* FlicksterTabView.swift */; };
 		1439BD232AA4C2D1008CFF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1439BD222AA4C2D1008CFF25 /* Assets.xcassets */; };
 		1439BD262AA4C2D1008CFF25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1439BD252AA4C2D1008CFF25 /* Preview Assets.xcassets */; };
 		1439BD2E2AA4C914008CFF25 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439BD2D2AA4C914008CFF25 /* PostModel.swift */; };
@@ -23,12 +23,13 @@
 		1444FA742AA8A39C0027A314 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA732AA8A39C0027A314 /* PlayerView.swift */; };
 		1444FA762AA8B1060027A314 /* SubverseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA752AA8B1060027A314 /* SubverseView.swift */; };
 		1444FA782AA8B1120027A314 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA772AA8B1120027A314 /* ProfileView.swift */; };
+		14A22FF32B20827B00104F26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A22FF22B20827B00104F26 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1439BD1B2AA4C2CF008CFF25 /* flickster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flickster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1439BD1E2AA4C2CF008CFF25 /* FlicksterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlicksterApp.swift; sourceTree = "<group>"; };
-		1439BD202AA4C2CF008CFF25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1439BD202AA4C2CF008CFF25 /* FlicksterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlicksterTabView.swift; sourceTree = "<group>"; };
 		1439BD222AA4C2D1008CFF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1439BD252AA4C2D1008CFF25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1439BD2D2AA4C914008CFF25 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 		1444FA732AA8A39C0027A314 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		1444FA752AA8B1060027A314 /* SubverseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubverseView.swift; sourceTree = "<group>"; };
 		1444FA772AA8B1120027A314 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		14A22FF22B20827B00104F26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +77,8 @@
 		1439BD1D2AA4C2CF008CFF25 /* flickster */ = {
 			isa = PBXGroup;
 			children = (
-				1439BD3B2AA4CE91008CFF25 /* ViewModel */,
-				1439BD382AA4CE41008CFF25 /* Views */,
-				1439BD2F2AA4CA90008CFF25 /* Actions */,
-				1439BD2C2AA4C6C1008CFF25 /* Model */,
+				14A22FE32B207F1D00104F26 /* Core */,
+				14A22FE42B207F2300104F26 /* Features */,
 				1439BD1E2AA4C2CF008CFF25 /* FlicksterApp.swift */,
 				1439BD222AA4C2D1008CFF25 /* Assets.xcassets */,
 				1439BD242AA4C2D1008CFF25 /* Preview Content */,
@@ -94,45 +94,136 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		1439BD2C2AA4C6C1008CFF25 /* Model */ = {
+		14A22FE32B207F1D00104F26 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				14A22FEF2B20817500104F26 /* APIBuilder */,
+				14A22FEE2B2080DF00104F26 /* Root */,
+				14A22FEA2B207FD300104F26 /* Models */,
+				14A22FF02B20818800104F26 /* Utils */,
+				14A22FEB2B207FEB00104F26 /* TabView */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		14A22FE42B207F2300104F26 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				14A22FE52B207F3A00104F26 /* Feed */,
+				14A22FEC2B20803A00104F26 /* Profile */,
+				14A22FED2B20804000104F26 /* Subverse */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		14A22FE52B207F3A00104F26 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				14A22FE82B207F6C00104F26 /* Components */,
+				14A22FE62B207F4400104F26 /* Service */,
+				14A22FE72B207F6500104F26 /* View */,
+				14A22FE92B207F9100104F26 /* ViewModel */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		14A22FE62B207F4400104F26 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1439BD362AA4CBC6008CFF25 /* FeedService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		14A22FE72B207F6500104F26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1444FA6F2AA89E4B0027A314 /* PlayerScrollView.swift */,
+				1439BD392AA4CE5A008CFF25 /* FeedView.swift */,
+				1444FA732AA8A39C0027A314 /* PlayerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14A22FE82B207F6C00104F26 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		14A22FE92B207F9100104F26 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1444FA712AA8A18C0027A314 /* VideoPlayerViewModel.swift */,
+				1439BD3C2AA4CEA3008CFF25 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14A22FEA2B207FD300104F26 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				1439BD2D2AA4C914008CFF25 /* PostModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		1439BD2F2AA4CA90008CFF25 /* Actions */ = {
+		14A22FEB2B207FEB00104F26 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				1439BD202AA4C2CF008CFF25 /* FlicksterTabView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		14A22FEC2B20803A00104F26 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1444FA772AA8B1120027A314 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		14A22FED2B20804000104F26 /* Subverse */ = {
+			isa = PBXGroup;
+			children = (
+				1444FA752AA8B1060027A314 /* SubverseView.swift */,
+			);
+			path = Subverse;
+			sourceTree = "<group>";
+		};
+		14A22FEE2B2080DF00104F26 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				14A22FF22B20827B00104F26 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		14A22FEF2B20817500104F26 /* APIBuilder */ = {
 			isa = PBXGroup;
 			children = (
 				1439BD302AA4CA9F008CFF25 /* APIBuilder.swift */,
-				1439BD322AA4CB3C008CFF25 /* ResultStates.swift */,
+			);
+			path = APIBuilder;
+			sourceTree = "<group>";
+		};
+		14A22FF02B20818800104F26 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				14A22FF12B20819800104F26 /* Enums */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		14A22FF12B20819800104F26 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
 				1439BD342AA4CB6C008CFF25 /* APIError.swift */,
-				1439BD362AA4CBC6008CFF25 /* FeedService.swift */,
+				1439BD322AA4CB3C008CFF25 /* ResultStates.swift */,
 			);
-			path = Actions;
-			sourceTree = "<group>";
-		};
-		1439BD382AA4CE41008CFF25 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				1439BD202AA4C2CF008CFF25 /* ContentView.swift */,
-				1439BD392AA4CE5A008CFF25 /* FeedView.swift */,
-				1444FA6F2AA89E4B0027A314 /* PlayerScrollView.swift */,
-				1444FA732AA8A39C0027A314 /* PlayerView.swift */,
-				1444FA752AA8B1060027A314 /* SubverseView.swift */,
-				1444FA772AA8B1120027A314 /* ProfileView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		1439BD3B2AA4CE91008CFF25 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1439BD3C2AA4CEA3008CFF25 /* FeedViewModel.swift */,
-				1444FA712AA8A18C0027A314 /* VideoPlayerViewModel.swift */,
-			);
-			path = ViewModel;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +299,7 @@
 				1439BD3A2AA4CE5A008CFF25 /* FeedView.swift in Sources */,
 				1439BD312AA4CA9F008CFF25 /* APIBuilder.swift in Sources */,
 				1444FA762AA8B1060027A314 /* SubverseView.swift in Sources */,
-				1439BD212AA4C2CF008CFF25 /* ContentView.swift in Sources */,
+				1439BD212AA4C2CF008CFF25 /* FlicksterTabView.swift in Sources */,
 				1439BD372AA4CBC6008CFF25 /* FeedService.swift in Sources */,
 				1439BD2E2AA4C914008CFF25 /* PostModel.swift in Sources */,
 				1444FA702AA89E4B0027A314 /* PlayerScrollView.swift in Sources */,
@@ -216,6 +307,7 @@
 				1444FA742AA8A39C0027A314 /* PlayerView.swift in Sources */,
 				1439BD1F2AA4C2CF008CFF25 /* FlicksterApp.swift in Sources */,
 				1444FA722AA8A18C0027A314 /* VideoPlayerViewModel.swift in Sources */,
+				14A22FF32B20827B00104F26 /* ContentView.swift in Sources */,
 				1439BD352AA4CB6C008CFF25 /* APIError.swift in Sources */,
 				1444FA782AA8B1120027A314 /* ProfileView.swift in Sources */,
 				1439BD3D2AA4CEA3008CFF25 /* FeedViewModel.swift in Sources */,
@@ -349,11 +441,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"flickster/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Flickster;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,9 +455,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulll.flickster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -377,11 +474,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"flickster/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Flickster;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,9 +488,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulll.flickster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

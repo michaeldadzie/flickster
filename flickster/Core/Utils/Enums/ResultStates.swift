@@ -1,6 +1,5 @@
 import Foundation
 
-
 enum ResultState: Equatable {
     case loading
     case success(content: [Post])
