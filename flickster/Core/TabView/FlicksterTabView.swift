@@ -2,8 +2,8 @@ import SwiftUI
 import UIKit
 
 struct FlicksterTabView: View {
+    @EnvironmentObject var launchViewModel: LaunchScreenViewModel
     @State private var selectedTab = 0
-    @StateObject var manager = FlicksterManager()
     
     init() {
         UITabBar.appearance().unselectedItemTintColor = .gray
@@ -30,7 +30,6 @@ struct FlicksterTabView: View {
                     selectedTab = 1
                 }
                 .tag(1)
-                // .onTapGesture { manager.player.pause() }
             
             ProfileView()
                 .tabItem {
@@ -42,9 +41,15 @@ struct FlicksterTabView: View {
                     selectedTab = 2
                 }
                 .tag(2)
-                // .onTapGesture { manager.player.pause() }
         }
         .tint(.red)
+        .onAppear {
+            DispatchQueue
+                .main
+                .asyncAfter(deadline: .now() + 2) {
+                    launchViewModel.dismiss()
+                }
+        }
     }
 }
 
