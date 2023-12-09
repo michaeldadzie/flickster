@@ -3,12 +3,9 @@ import SwiftUI
 
 struct FeedView: View {
     @StateObject var viewModel = FeedViewModelImpl(service: FeedServiceImpl())
-    @StateObject var manager = FlicksterManager()
-    @State private var scrollPosition: Int?
+    @StateObject var manager = FlicksterManager(viewModel: FeedViewModelImpl(service: FeedServiceImpl()))
     // @State private var player = AVPlayer()
     @State private var hasLoadedPosts = false
-    
-    // @StateObject var videoView = VideoPlayerViewModel()
     
     var body: some View {
         ScrollView {
@@ -26,29 +23,14 @@ struct FeedView: View {
         .onAppear {
             manager.player.play()
         }
-        .scrollPosition(id: $scrollPosition)
+        .scrollPosition(id: $manager.scrollPosition)
         .scrollTargetBehavior(.paging)
         .ignoresSafeArea()
-        .onChange(of: scrollPosition) { previousIndex, currentIndex in
-            print(currentIndex!)
-            onChanged(postId: currentIndex)
+        .onChange(of: manager.scrollPosition) { previousIndex, currentIndex in
+            // print(currentIndex!)
+            manager.onChanged(previousID: previousIndex, currentID: currentIndex)
         }
         .task(priority: .background, { loadPostsIfNeeded() })
-         /* NavigationView {
-            Group {
-                switch viewModel.state {
-                case .loading:
-                    ZStack {
-                        Color(.white)
-                        ProgressView()
-                    }
-                    
-                default:
-                    ScrollView {}
-                }
-            }
-            .task(priority: .background, { viewModel.getPosts() })
-        } */
     }
     
     private func loadPostsIfNeeded() {
@@ -60,21 +42,22 @@ struct FeedView: View {
         hasLoadedPosts = true
     }
     
-    func initPlayer() {
-        guard scrollPosition == nil, let post = viewModel.posts.first,
-              manager.player.currentItem == nil else { return }
+    private func initPlayer() {
+        guard manager.scrollPosition == nil, let post = viewModel.posts.first,
+              manager.player.currentItem == nil else {return }
         
+        print("DEBUG: Init")
         let item = AVPlayerItem(url: URL(string: post.videoLink)!)
         manager.player.replaceCurrentItem(with: item)
     }
     
-    func onChanged(postId: Int?) {
-        guard let currentIndex = viewModel.posts.first(where: {  $0.id == postId }) else { return }
-        
-        manager.player.replaceCurrentItem(with: nil) // wipes out previous player, figure out a way pause for 3 indexs before replacing
-        let playerItem = AVPlayerItem(url: URL(string: currentIndex.videoLink)!)
-        manager.player.replaceCurrentItem(with: playerItem)
-    }
+//    func onChanged(postId: Int?) {
+//        guard let currentIndex = viewModel.posts.first(where: {  $0.id == postId }) else { return }
+//        
+//        manager.player.replaceCurrentItem(with: nil) // wipes out previous player, figure out a way pause for 3 indexs before replacing
+//        let playerItem = AVPlayerItem(url: URL(string: currentIndex.videoLink)!)
+//        manager.player.replaceCurrentItem(with: playerItem)
+//    }
 }
 
 #Preview {
