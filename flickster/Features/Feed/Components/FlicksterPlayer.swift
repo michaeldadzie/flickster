@@ -1,7 +1,6 @@
-import Foundation
-
 import AVKit
 import SwiftUI
+import AVFoundation
 
 struct FlicksterPlayer: UIViewControllerRepresentable {
     var player: AVPlayer
@@ -13,6 +12,10 @@ struct FlicksterPlayer: UIViewControllerRepresentable {
         controller.exitsFullScreenWhenPlaybackEnds = true
         controller.allowsPictureInPicturePlayback = true
         controller.videoGravity = .resizeAspectFill
+        
+        /*if let currentItem = player.currentItem {
+            let _ = AVPlayerLooper(player: player, templateItem: currentItem)
+        }*/
         return controller
     }
     
