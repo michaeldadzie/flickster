@@ -7,9 +7,10 @@ protocol FeedViewModel {
 }
 
 class FeedViewModelImpl: ObservableObject, FeedViewModel {
-    
     @Published var posts = [Post]()
     
+    private var currentPage = 1
+    private var isPaginating = true
     private let service: FeedService
     private var cancellables = Set<AnyCancellable>()
     
@@ -26,24 +27,24 @@ class FeedViewModelImpl: ObservableObject, FeedViewModel {
     
     func getPosts() {
         
-        print("DEBUG: fetching posts")
+        // print("DEBUG: fetching posts")
         
         self.state = .loading
         
         let cancellable = service
-            .request(from: .getPosts)
-            .sink { res in
+            .request(from: .getPosts(page: currentPage))
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] res in
                 switch res {
                 case .finished:
-                    self.state = .success(content:  self.posts)
+                    self?.state = .success(content: self?.posts ?? [])
                 case .failure(let error):
-                    self.state = .failed(error: error)
+                    self?.state = .failed(error: error)
                 }
-            } receiveValue: { response in
-                self.posts = response.posts
-                // print(self.posts)
-                // print(response.posts)
-                // print(response.page)
+            } receiveValue: { [weak self] response in
+                self?.posts = response.posts
+                self?.state = .success(content: response.posts)
+                self?.currentPage += 1
             }
         
         self.cancellables.insert(cancellable)
