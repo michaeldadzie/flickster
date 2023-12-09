@@ -21,6 +21,9 @@
 		1444FA722AA8A18C0027A314 /* FlicksterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA712AA8A18C0027A314 /* FlicksterManager.swift */; };
 		1444FA762AA8B1060027A314 /* SubverseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA752AA8B1060027A314 /* SubverseView.swift */; };
 		1444FA782AA8B1120027A314 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444FA772AA8B1120027A314 /* ProfileView.swift */; };
+		149C0F0B2B2514C400D1A13E /* LaunchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C0F0A2B2514C400D1A13E /* LaunchScreenViewModel.swift */; };
+		149C0F0D2B25150100D1A13E /* LaunchScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C0F0C2B25150100D1A13E /* LaunchScreenManager.swift */; };
+		149C0F0F2B25152D00D1A13E /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C0F0E2B25152D00D1A13E /* LaunchScreenView.swift */; };
 		14A22FF32B20827B00104F26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A22FF22B20827B00104F26 /* ContentView.swift */; };
 		14A22FF52B20875A00104F26 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A22FF42B20875A00104F26 /* Category.swift */; };
 		14A22FF72B20961B00104F26 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A22FF62B20961B00104F26 /* FeedCell.swift */; };
@@ -29,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		143028CA2B25132E002F1E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1439BD1B2AA4C2CF008CFF25 /* flickster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flickster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1439BD1E2AA4C2CF008CFF25 /* FlicksterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlicksterApp.swift; sourceTree = "<group>"; };
 		1439BD202AA4C2CF008CFF25 /* FlicksterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlicksterTabView.swift; sourceTree = "<group>"; };
@@ -44,6 +48,9 @@
 		1444FA712AA8A18C0027A314 /* FlicksterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlicksterManager.swift; sourceTree = "<group>"; };
 		1444FA752AA8B1060027A314 /* SubverseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubverseView.swift; sourceTree = "<group>"; };
 		1444FA772AA8B1120027A314 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		149C0F0A2B2514C400D1A13E /* LaunchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewModel.swift; sourceTree = "<group>"; };
+		149C0F0C2B25150100D1A13E /* LaunchScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenManager.swift; sourceTree = "<group>"; };
+		149C0F0E2B25152D00D1A13E /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		14A22FF22B20827B00104F26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		14A22FF42B20875A00104F26 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		14A22FF62B20961B00104F26 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -81,6 +88,7 @@
 		1439BD1D2AA4C2CF008CFF25 /* flickster */ = {
 			isa = PBXGroup;
 			children = (
+				143028CA2B25132E002F1E4D /* Info.plist */,
 				14A22FE32B207F1D00104F26 /* Core */,
 				14A22FE42B207F2300104F26 /* Features */,
 				1439BD1E2AA4C2CF008CFF25 /* FlicksterApp.swift */,
@@ -98,14 +106,31 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		149C0F082B25145000D1A13E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14A22FF22B20827B00104F26 /* ContentView.swift */,
+				149C0F0E2B25152D00D1A13E /* LaunchScreenView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		149C0F092B25145600D1A13E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				149C0F0A2B2514C400D1A13E /* LaunchScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		14A22FE32B207F1D00104F26 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				14A22FEF2B20817500104F26 /* APIBuilder */,
-				14A22FEE2B2080DF00104F26 /* Root */,
 				14A22FEA2B207FD300104F26 /* Models */,
-				14A22FF02B20818800104F26 /* Utils */,
+				14A22FEE2B2080DF00104F26 /* Root */,
 				14A22FEB2B207FEB00104F26 /* TabView */,
+				14A22FF02B20818800104F26 /* Utils */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -202,7 +227,8 @@
 		14A22FEE2B2080DF00104F26 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				14A22FF22B20827B00104F26 /* ContentView.swift */,
+				149C0F082B25145000D1A13E /* View */,
+				149C0F092B25145600D1A13E /* ViewModel */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -228,6 +254,7 @@
 			children = (
 				1439BD342AA4CB6C008CFF25 /* APIError.swift */,
 				1439BD322AA4CB3C008CFF25 /* ResultStates.swift */,
+				149C0F0C2B25150100D1A13E /* LaunchScreenManager.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -313,10 +340,13 @@
 				14A22FF52B20875A00104F26 /* Category.swift in Sources */,
 				1439BD332AA4CB3C008CFF25 /* ResultStates.swift in Sources */,
 				1439BD1F2AA4C2CF008CFF25 /* FlicksterApp.swift in Sources */,
+				149C0F0B2B2514C400D1A13E /* LaunchScreenViewModel.swift in Sources */,
 				1444FA722AA8A18C0027A314 /* FlicksterManager.swift in Sources */,
 				14A22FF32B20827B00104F26 /* ContentView.swift in Sources */,
 				14A22FF92B2096E600104F26 /* ActionItem.swift in Sources */,
+				149C0F0F2B25152D00D1A13E /* LaunchScreenView.swift in Sources */,
 				1439BD352AA4CB6C008CFF25 /* APIError.swift in Sources */,
+				149C0F0D2B25150100D1A13E /* LaunchScreenManager.swift in Sources */,
 				1444FA782AA8B1120027A314 /* ProfileView.swift in Sources */,
 				1439BD3D2AA4CEA3008CFF25 /* FeedViewModel.swift in Sources */,
 			);
@@ -376,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -431,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -451,10 +481,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"flickster/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = flickster/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Flickster;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -484,10 +514,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"flickster/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = flickster/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Flickster;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
