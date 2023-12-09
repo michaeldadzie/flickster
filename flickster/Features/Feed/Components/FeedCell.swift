@@ -20,9 +20,13 @@ struct FeedCell: View {
                 
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
-                        Text("michaeldadzie")
+                        Text(post.username)
                             .fontWeight(.semibold)
-                        Text("Prepare pulse for iOS 17")
+                        if (post.title.isEmpty || post.title == "") {
+                            
+                        } else {
+                            Text(post.title)
+                        }
                     }
                     .foregroundStyle(.white)
                     .font(.subheadline)
@@ -35,11 +39,11 @@ struct FeedCell: View {
                             .frame(width: 48, height: 48)
                             .foregroundStyle(.yellow)
                         
-                        ActionItem(imageName: "heart.fill", label: "27", action: {})
+                        ActionItem(imageName: "heart.fill", label: "\(post.upvoteCount)", action: {})
                         
-                        ActionItem(imageName: "ellipsis.bubble.fill", label: "2", action: {})
+                        ActionItem(imageName: "ellipsis.bubble.fill", label: "\(post.commentCount)", action: {})
                         
-                        ActionItem(imageName: "bookmark.fill", label: "0", action: {}, width: 22)
+                        // ActionItem(imageName: "bookmark.fill", label: "0", action: {}, width: 22)
                         
                         ActionItem(imageName: "arrowshape.turn.up.forward.fill", label: "Share", action: {})
                 
