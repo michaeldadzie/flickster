@@ -2,9 +2,18 @@ import SwiftUI
 
 @main
 struct FlicksterApp: App {
+    @StateObject var viewModel = LaunchScreenViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            FlicksterTabView()
+            ZStack {
+                FlicksterTabView()
+                
+                if viewModel.state != .completed {
+                    LaunchScreenView()
+                }
+            }
+            .environmentObject(viewModel)
         }
     }
 }
