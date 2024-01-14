@@ -1,21 +1,18 @@
 import AVKit
 import SwiftUI
-import AVFoundation
 
 struct FlicksterPlayer: UIViewControllerRepresentable {
-    var player: AVPlayer
+    var player: AVQueuePlayer
     
     func makeUIViewController(context: Context) -> UIViewController {
         let controller = AVPlayerViewController()
         controller.player = player
         controller.showsPlaybackControls = false
+        controller.view.backgroundColor = .black
         controller.exitsFullScreenWhenPlaybackEnds = true
         controller.allowsPictureInPicturePlayback = true
         controller.videoGravity = .resizeAspectFill
         
-        /*if let currentItem = player.currentItem {
-            let _ = AVPlayerLooper(player: player, templateItem: currentItem)
-        }*/
         return controller
     }
     

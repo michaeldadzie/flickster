@@ -7,7 +7,8 @@ struct FlicksterTabView: View {
     
     init() {
         UITabBar.appearance().unselectedItemTintColor = .gray
-        // UITabBar.appearance().barTintColor = .black
+        UITabBar.appearance().tintColor = .red
+        UITabBar.appearance().barTintColor = .black
     }
     
     var body: some View {
@@ -24,9 +25,9 @@ struct FlicksterTabView: View {
             SubverseView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
-                    Text("Subverse")
+                    Text("Search")
                 }
-                .onAppear { 
+                .onAppear {
                     selectedTab = 1
                 }
                 .tag(1)
@@ -35,18 +36,17 @@ struct FlicksterTabView: View {
                 .tabItem {
                     Image(systemName: selectedTab == 2 ? "person.fill" : "person")
                         .environment(\.symbolVariants, selectedTab == 2 ? .fill : .none)
-                    Text("Profile ")
+                    Text("Profile")
                 }
-                .onAppear { 
+                .onAppear {
                     selectedTab = 2
                 }
                 .tag(2)
         }
-        .tint(.red)
         .onAppear {
             DispatchQueue
                 .main
-                .asyncAfter(deadline: .now() + 2) {
+                .asyncAfter(deadline: .now() + 1) {
                     launchViewModel.dismiss()
                 }
         }

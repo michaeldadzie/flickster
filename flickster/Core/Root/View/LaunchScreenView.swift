@@ -8,8 +8,9 @@ struct LaunchScreenView: View {
     private let timer = Timer.publish(every: 0.65, on: .main, in: .common).autoconnect()
     
     var body: some View {
+        #if !os(visionOS)
         ZStack {
-            Color.white
+            Color.black
                 .edgesIgnoringSafeArea(.all)
             Image("logo")
                 .scaleEffect(firstPhaseAnimating ? 0.6 : 1.0)
@@ -32,6 +33,7 @@ struct LaunchScreenView: View {
             }
         }
         .opacity(secondPhaseAnimating ? 0 : 1)
+        #endif
     }
 }
 
