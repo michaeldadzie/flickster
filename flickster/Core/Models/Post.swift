@@ -1,4 +1,18 @@
+import AVKit
 import Foundation
+
+struct PostModel: Codable {
+    let page, recordsPerPage, maxPageSize, pageSize: Int
+    let posts: [Post]
+
+    enum CodingKeys: String, CodingKey {
+        case page
+        case recordsPerPage = "records_per_page"
+        case maxPageSize = "max_page_size"
+        case pageSize = "page_size"
+        case posts
+    }
+}
 
 struct Post: Codable, Identifiable, Equatable {
     
@@ -18,6 +32,8 @@ struct Post: Codable, Identifiable, Equatable {
     let thumbnailURL: String
     let following: Bool
     let pictureURL: String
+    
+    var player: AVQueuePlayer?
 
     enum CodingKeys: String, CodingKey {
         case id, category, slug, title, identifier
@@ -33,19 +49,6 @@ struct Post: Codable, Identifiable, Equatable {
         case thumbnailURL = "thumbnail_url"
         case following
         case pictureURL = "picture_url"
-    }
-}
-
-struct PostData: Codable {
-    let page, recordsPerPage, maxPageSize, pageSize: Int
-    let posts: [Post]
-
-    enum CodingKeys: String, CodingKey {
-        case page
-        case recordsPerPage = "records_per_page"
-        case maxPageSize = "max_page_size"
-        case pageSize = "page_size"
-        case posts
     }
 }
 
