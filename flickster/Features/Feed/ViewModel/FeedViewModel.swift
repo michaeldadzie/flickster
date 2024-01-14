@@ -1,16 +1,18 @@
+import AVKit
 import Combine
-import Foundation
 
 protocol FeedViewModel {
-    func getPosts()
+    func getPosts() async
     var isLoading: Bool { get }
 }
 
 class FeedViewModelImpl: ObservableObject, FeedViewModel {
     @Published var posts = [Post]()
+    @Published var isPlaying: Bool = false
+    //@Published var player: AVQueuePlayer
+    @Published var scrollPosition: Int?
     
-    private var currentPage = 1
-    private var isPaginating = true
+    private var currentPage = 74
     private let service: FeedService
     private var cancellables = Set<AnyCancellable>()
     
@@ -20,15 +22,13 @@ class FeedViewModelImpl: ObservableObject, FeedViewModel {
     
     @Published private(set) var state: ResultState = .loading
     
-    
     init(service: FeedService) {
+        //player = AVQueuePlayer()
         self.service = service
     }
     
-    func getPosts() {
-        
-        // print("DEBUG: fetching posts")
-        
+    @MainActor
+    func getPosts() async {
         self.state = .loading
         
         let cancellable = service
@@ -42,12 +42,69 @@ class FeedViewModelImpl: ObservableObject, FeedViewModel {
                     self?.state = .failed(error: error)
                 }
             } receiveValue: { [weak self] response in
-                self?.posts = response.posts
-                self?.state = .success(content: response.posts)
-                self?.currentPage += 1
+                let updatedPosts = response.posts.map { post -> Post in
+                    var mutablePost = post
+                    if let url = URL(string: post.videoLink) {
+                        mutablePost.player = AVQueuePlayer(url: url)
+                    }
+                    
+                    return mutablePost
+                }
+                self?.posts = updatedPosts
+                self?.state = .success(content: updatedPosts)
+                self?.initPlayer()
+                /*
+                 self?.posts = response.posts
+                 self?.state = .success(content: response.posts)
+                 */
             }
         
         self.cancellables.insert(cancellable)
     }
     
+    func initPlayer() {
+        guard scrollPosition == nil, !posts.isEmpty else { return }
+        
+        if posts[0].player != nil, let url = URL(string: posts[0].videoLink) {
+            posts[0].player = AVQueuePlayer(url: url)
+            posts[0].player?.play()
+        }
+    }
+    
+    //    func initPlayer() {
+    //        /*guard scrollPosition == nil, let post = posts.first,
+    //              player.currentItem == nil else {return }
+    //
+    //        print("DEBUG: Init Video Player")
+    //        let item = AVPlayerItem(url: URL(string: post.videoLink)!)
+    //        player.replaceCurrentItem(with: item)*/
+    //    }
+    
+    func onChanged(previousID: Int?, currentID: Int?) {
+        if let previousID = previousID, let previousPost = posts.first(where: { $0.id == previousID }), let previousPlayer = previousPost.player {
+            previousPlayer.pause()
+        }
+        
+        if let currentID = currentID, let currentPost = posts.first(where: { $0.id == currentID }), let currentPlayer = currentPost.player {
+            currentPlayer.play()
+        }
+        
+        /*player.pause()
+         isPlaying = false
+         
+         print("DEBUG: Changing Index \(currentID ?? 0)")
+         guard let currentPost = posts.first(where: { $0.id == currentID }) else { return }
+         //guard let previousPost = posts.first(where:   { $0.id == previousID }) else { return }
+         
+         DispatchQueue.main.async { [weak self] in
+         guard let self = self else { return }
+         //let previousItem = AVPlayerItem(url: URL(string: previousPost.videoLink)!)
+         self.player.replaceCurrentItem(with: nil) // nil
+         let currentItem = AVPlayerItem(url: URL(string: currentPost.videoLink)!)
+         self.player.replaceCurrentItem(with: currentItem)
+         self.player.play()
+         self.isPlaying = true
+         
+         }*/
+    }
 }
