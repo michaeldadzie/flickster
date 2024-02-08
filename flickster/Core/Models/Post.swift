@@ -34,6 +34,7 @@ struct Post: Codable, Identifiable, Equatable {
     let pictureURL: String
     
     var player: AVQueuePlayer?
+    var looper: AVPlayerLooper?
 
     enum CodingKeys: String, CodingKey {
         case id, category, slug, title, identifier
