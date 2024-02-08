@@ -12,7 +12,7 @@ class FlicksterManager: ObservableObject {
     private var playerItems: [Int: AVPlayerItem] = [:]
     private var controllers: [URL: AVQueuePlayer] = [:]
     
-    init(viewModel: FeedViewModelImpl) async {
+    init(viewModel: FeedViewModel) async {
         player = AVQueuePlayer()
         
         viewModel.$posts
